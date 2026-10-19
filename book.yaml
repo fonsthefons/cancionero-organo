@@ -1,0 +1,7 @@
+# Settings of this song book. Every setting is explained in the builder's
+# builder/book.py (DEFAULTS). Rebuild after changing them.
+
+title: Cancionero Organo
+storage_key: cancionero-organo
+install_tip: banner
+strict_tags: true

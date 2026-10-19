@@ -1,0 +1,37 @@
+# Tags and subtags of this book: labels shown in the book, in this order.
+# Songs may also use tags that aren't listed here: they are added after these.
+
+misa:
+  label: Misa
+  subtags:
+    entrada: Entrada
+    gloria: Gloria
+    aleluya: Aleluya
+    ofertorio: Ofertorio
+    santo: Santo
+    cordero: Cordero
+    comunion: Comunion
+    salida: Salida
+
+laudes:
+  label: Laudes
+  subtags:
+    salmo: Salmo
+    tono_recto: Tono Recto
+    canto_evangelico: Canto Evangelico
+
+visperas:
+  label: Visperas
+  subtags:
+    salmo: Salmo
+    tono_recto: Tono Recto
+    canto_evangelico: Canto Evangelico
+
+adoracion:
+  label: Adoracion
+
+espanol:
+  label: Español
+
+latin:
+  label: Latin
