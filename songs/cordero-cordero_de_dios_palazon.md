@@ -8,7 +8,7 @@ melody: |
   K:F
   M:2/4
   L:1/8
-  Z7 | z2 z "F"A | A2 F G | "Am"A3 A | "C"c B A A |
+  z2 z "F"A | A2 F G | "Am"A3 A | "C"c B A A | "Dm"F2 F G | "F"A2 A2 |
 ---
 
     F           Am      C
