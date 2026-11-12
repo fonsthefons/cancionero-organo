@@ -1,6 +1,6 @@
 # Cancionero Organo
 
-A song book with chords, as one web page (`index.html`).
+A song book with chords, as one web page (`index.html`), live at **https://fonsthefons.github.io/cancionero-organo/**.
 
 This repo holds the book's songs and settings. The page is built with
 [cancionero-builder](https://github.com/fonsthefons/cancionero-builder): from the
