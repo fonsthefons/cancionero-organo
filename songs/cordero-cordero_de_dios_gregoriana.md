@@ -7,7 +7,7 @@ song_tags:
 melody: |
   K:C
   L:1/8
-  "Em"E E "Am"EF G2 "F"A G G E F D E "Dm"F2 "G"E F |
+  "Em"G G "Am"GA A2 | "F"A A A G A F G A2 |
 ---
 
 Em    Am       F                 Dm
