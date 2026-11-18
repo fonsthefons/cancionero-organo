@@ -53,9 +53,9 @@ G         D            C D
 Yo quiero ser tu servidor
    G      D            C
 Vivir tan solo de tu amor
-   Bm            C  Am
+   Bm            C
 Sentir la sed de almas
-                     D
+Am                   D
 Que me infunde tu calor
 
 G           D
@@ -100,7 +100,7 @@ G         D            C D
 Yo quiero ser tu servidor
    G      D            C
 Vivir tan solo de tu amor
-   Bm            C  Am
+   Bm            C
 Sentir la sed de almas
-                     D
+Am                   D
 Que me infunde tu calor
