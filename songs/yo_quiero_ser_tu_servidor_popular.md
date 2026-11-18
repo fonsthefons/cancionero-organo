@@ -40,6 +40,7 @@ Siempre juntos
      C     D D7
 Tú y yo Señor
 
+**
 G         D            C D
 Yo quiero ser tu servidor
 G         D            C
@@ -57,6 +58,7 @@ Vivir tan solo de tu amor
 Sentir la sed de almas
 Am                   D
 Que me infunde tu calor
+**
 
 G           D
 Quieres contar
@@ -87,6 +89,7 @@ Siempre juntos
      C     D D7
 Tú y yo Señor
 
+**
 G         D            C D
 Yo quiero ser tu servidor
 G         D            C
@@ -104,3 +107,4 @@ Vivir tan solo de tu amor
 Sentir la sed de almas
 Am                   D
 Que me infunde tu calor
+**
