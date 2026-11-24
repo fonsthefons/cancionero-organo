@@ -1,5 +1,6 @@
 ---
 title: Aleluya (97)
+key: D
 autor: Popular
 song_tags:
   misa: [aleluya]

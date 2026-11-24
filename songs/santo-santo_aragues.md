@@ -1,5 +1,6 @@
 ---
 title: Santo (132)
+key: A
 autor: T. Aragüés
 song_tags:
   misa:

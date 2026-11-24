@@ -1,5 +1,6 @@
 ---
 title: Como el Padre me amó
+key: D
 autor: popular
 song_tags:
   misa:

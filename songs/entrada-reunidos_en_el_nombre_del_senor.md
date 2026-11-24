@@ -1,5 +1,6 @@
 ---
 title: Reunidos en el nombre del Señor
+key: G
 autor: popular
 song_tags:
   misa:

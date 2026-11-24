@@ -24,6 +24,7 @@ body {
     --muted: #666;
     --accent: #397380;
     --accent-light: #2f8ea4;
+    --done: #2e7d32;
     --chord: #1a8f8f;
     --button-bg: #fffaf1;
     --button-ink: #5f63a8;
@@ -53,6 +54,7 @@ body[data-theme="dark"] {
     --muted: #a3a3a3;
     --accent: #8cc4cf;
     --accent-light: #7fb8d0;
+    --done: #81c784;
     --chord: #5ed6cc;
     --button-bg: #2c2c31;
     --button-ink: #c3c5f0;
@@ -71,6 +73,7 @@ body[data-theme="dark"] {
         --muted: #a3a3a3;
         --accent: #8cc4cf;
         --accent-light: #7fb8d0;
+    --done: #81c784;
         --chord: #5ed6cc;
         --button-bg: #2c2c31;
         --button-ink: #c3c5f0;
@@ -622,6 +625,46 @@ body.drawer-open {
     padding: 5px 0;
 }
 
+/* Progress checkboxes (book.yaml progress: true, web/js/progress.js) */
+.song-list li:has(> .done-box) {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.song-list li:has(> .done-box) > a {
+    flex: 1;
+}
+
+.done-box {
+    flex: none;
+    width: 1.2em;
+    height: 1.2em;
+    margin: 0;
+    accent-color: var(--done);
+}
+
+.index li.done > a,
+.index details.done > summary {
+    color: var(--done);
+}
+
+.done-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    margin-top: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+@media print {
+    .done-box,
+    .done-toggle {
+        display: none !important;
+    }
+}
+
 /* ============================= */
 /* SONG                          */
 /* ============================= */
@@ -660,6 +703,24 @@ body.drawer-open {
     color: var(--accent);
     text-decoration: underline;
     font-style: normal;
+}
+
+/* Tag pills (book.yaml tag_pills): each tag's colour is a .k<n> rule added by
+   the build. Dark text on a pastel works in both themes. */
+.pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin: -4px 0 10px;
+}
+
+.pills i {
+    font-style: normal;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    padding: 0 7px;
+    border-radius: 9px;
+    color: #333;
 }
 
 .controls {
@@ -1171,7 +1232,15 @@ body.tour-on .drawer .nav {
         display: block !important;
     }
 }
-
+.k0{background:hsl(0 70% 76%)}
+.k1{background:hsl(72 70% 87%)}
+.k2{background:hsl(120 70% 87%)}
+.k3{background:hsl(144 70% 87%)}
+.k4{background:hsl(168 70% 87%)}
+.k5{background:hsl(192 70% 87%)}
+.k6{background:hsl(240 70% 87%)}
+.k7{background:hsl(96 70% 87%)}
+.k8{background:hsl(168 70% 76%)}
 </style>
 </head>
 <body data-chords="show" data-columns="1" data-theme="auto" data-notation="letters">
@@ -1363,9 +1432,10 @@ body.tour-on .drawer .nav {
 </section>
 
 <main class="songs">
-<article class="song" id="song-aleluya-gregoriana_94" data-title="Aleluya (94)" data-autor="Gregoriana" style="--chars: 17">
+<article class="song" id="song-aleluya-gregoriana_94" data-title="Aleluya (94)" data-autor="Gregoriana" data-key="G" style="--chars: 17">
 <h3>1. Aleluya (94) - Gregoriana</h3>
-<p class="song-meta"><span class="meta-item">Autor: Gregoriana</span></p>
+<p class="song-meta"><span class="meta-item">Autor: Gregoriana</span><span class="meta-item song-key">Key: G</span></p>
+<p class="pills"><i class="k0">Mis</i><i class="k2">Ale</i></p>
 <div class="controls">
   <button data-action="toggle-chords">Chords</button>
   <div class="stepper">
@@ -1392,9 +1462,10 @@ L:1/8
 <div class="verse"><div class="line-pair"><div class="chord-line">G  <span class="sep">(</span>G<span class="sep">)</span>   D    C D</div>Aleluya, aleluya,</div><div class="line-pair"><div class="chord-line">Em D G</div>aleluya.</div></div>
 </div>
 </article>
-<article class="song" id="song-aleluya-gregoriana_95" data-title="Aleluya (95)" data-autor="Gregoriana" style="--chars: 26">
+<article class="song" id="song-aleluya-gregoriana_95" data-title="Aleluya (95)" data-autor="Gregoriana" data-key="Am" style="--chars: 26">
 <h3>2. Aleluya (95) - Gregoriana</h3>
-<p class="song-meta"><span class="meta-item">Autor: Gregoriana</span></p>
+<p class="song-meta"><span class="meta-item">Autor: Gregoriana</span><span class="meta-item song-key">Key: Am</span></p>
+<p class="pills"><i class="k0">Mis</i><i class="k2">Ale</i></p>
 <div class="controls">
   <button data-action="toggle-chords">Chords</button>
   <div class="stepper">
@@ -1421,9 +1492,10 @@ L:1/8
 <div class="verse"><div class="line-pair"><div class="chord-line">Am   F    Am  Em  G    Am</div>Aleluya, aleluya, aleluya.</div></div>
 </div>
 </article>
-<article class="song" id="song-aleluya-aleluya_97" data-title="Aleluya (97)" data-autor="Popular" style="--chars: 35">
+<article class="song" id="song-aleluya-aleluya_97" data-title="Aleluya (97)" data-autor="Popular" data-key="D" style="--chars: 35">
 <h3>3. Aleluya (97) - Popular</h3>
-<p class="song-meta"><span class="meta-item">Autor: Popular</span></p>
+<p class="song-meta"><span class="meta-item">Autor: Popular</span><span class="meta-item song-key">Key: D</span></p>
+<p class="pills"><i class="k0">Mis</i><i class="k2">Ale</i></p>
 <div class="controls">
   <button data-action="toggle-chords">Chords</button>
   <div class="stepper">
@@ -1452,9 +1524,10 @@ L:1/8
 <div class="verse"><div class="chord-line">B<span class="sep">.</span></div><div class="line-pair"><div class="chord-line">D   F#m  G    D   G   D    A    A7</div>A - le - lu - ya, a - le - lu - ya,</div><div class="line-pair"><div class="chord-line">D   F#m  G    D   G   D    A7   D</div>a - le - lu - ya, a - le - lu - ya.</div></div>
 </div>
 </article>
-<article class="song" id="song-aleluya-ocarrol_116" data-title="Aleluya (116)" data-autor="O&#x27;Carrol" style="--chars: 35">
+<article class="song" id="song-aleluya-ocarrol_116" data-title="Aleluya (116)" data-autor="O&#x27;Carrol" data-key="G" style="--chars: 35">
 <h3>4. Aleluya (116) - O&#x27;Carrol</h3>
-<p class="song-meta"><span class="meta-item">Autor: O&#x27;Carrol</span></p>
+<p class="song-meta"><span class="meta-item">Autor: O&#x27;Carrol</span><span class="meta-item song-key">Key: G</span></p>
+<p class="pills"><i class="k0">Mis</i><i class="k2">Ale</i></p>
 <div class="controls">
   <button data-action="toggle-chords">Chords</button>
   <div class="stepper">
@@ -1482,9 +1555,10 @@ L:1/8
 <div class="verse"><div class="line-pair"><div class="chord-line">G   G    Em   D   C   Em   Am   D</div>A - le - lu - ya, A - le - lu - ya.</div><div class="line-pair"><div class="chord-line">G   G    Em   D   C   Em   Am D G</div>A - le - lu - ya, A - le - lu - ya.</div></div>
 </div>
 </article>
-<article class="song" id="song-anima_christi_marco_frisina" data-title="Anima Christi" data-autor="Marco Frisina" style="--chars: 29">
+<article class="song" id="song-anima_christi_marco_frisina" data-title="Anima Christi" data-autor="Marco Frisina" data-key="Am" style="--chars: 29">
 <h3>5. Anima Christi - Marco Frisina</h3>
-<p class="song-meta"><span class="meta-item">Autor: Marco Frisina</span><span class="meta-item">Capo: 0, 0-3, original 1</span><a class="meta-item" href="https://open.spotify.com/track/4TBTjp370FcPhGWAQP3NwD" target="_blank" rel="noopener">Spotify link</a></p>
+<p class="song-meta"><span class="meta-item">Autor: Marco Frisina</span><span class="meta-item">Capo: 0, 0-3, original 1</span><span class="meta-item song-key">Key: Am</span><a class="meta-item" href="https://open.spotify.com/track/4TBTjp370FcPhGWAQP3NwD" target="_blank" rel="noopener">Spotify link</a></p>
+<p class="pills"><i class="k0">Mis</i><i class="k6">Com</i><i class="k7">Ado</i><i class="k8">Lat</i></p>
 <div class="controls">
   <button data-action="toggle-chords">Chords</button>
   <div class="stepper">
@@ -1511,9 +1585,10 @@ L:1/8
 <div class="verse"><div class="line-pair"><div class="chord-line">     Dm    E  Am</div>Saeculorum, Amen.</div><div class="line-pair"><div class="chord-line">Am      F          G      Am</div>Anima Christi, sanctifica me</div><div class="line-pair"><div class="chord-line">Dm       Am            E</div>Corpus Christi, salva me</div><div class="line-pair"><div class="chord-line">Am        F        G     F</div>Sanguis Christi, inebria me</div><div class="line-pair"><div class="chord-line">Am   Dm       Am      E   Am</div>Aqua lateris Christi, lava me</div></div>
 </div>
 </article>
-<article class="song" id="song-aclamacion_memorial-anunciamos_tu_muerte" data-title="Anunciamos tu muerte (149)" data-autor="Anónima" style="--chars: 44">
+<article class="song" id="song-aclamacion_memorial-anunciamos_tu_muerte" data-title="Anunciamos tu muerte (149)" data-autor="Anónima" data-key="G" style="--chars: 44">
 <h3>6. Anunciamos tu muerte (149) - Anónima</h3>
-<p class="song-meta"><span class="meta-item">Autor: Anónima</span></p>
+<p class="song-meta"><span class="meta-item">Autor: Anónima</span><span class="meta-item song-key">Key: G</span></p>
+<p class="pills"><i class="k0">Mis</i><i class="k4">Acl</i></p>
 <div class="controls">
   <button data-action="toggle-chords">Chords</button>
   <div class="stepper">
@@ -1541,9 +1616,10 @@ L:1/8
 <div class="verse"><div class="line-pair"><div class="chord-line">G         D   G       C        Em          G</div>Anunciamos tu muerte, proclamamos tu resu-</div><div class="line-pair"><div class="chord-line">C           Em     D   Em</div>rrección. ¡Ven, Señor Jesús!</div></div>
 </div>
 </article>
-<article class="song" id="song-adoracion-cantemos_al_amor_de_los_amores" data-title="Cantemos al Amor de los amores (196)" data-autor="Busca de Sagastizábal" style="--chars: 38">
+<article class="song" id="song-adoracion-cantemos_al_amor_de_los_amores" data-title="Cantemos al Amor de los amores (196)" data-autor="Busca de Sagastizábal" data-key="F" style="--chars: 38">
 <h3>7. Cantemos al Amor de los amores (196) - Busca de Sagastizábal</h3>
-<p class="song-meta"><span class="meta-item">Autor: Busca de Sagastizábal</span></p>
+<p class="song-meta"><span class="meta-item">Autor: Busca de Sagastizábal</span><span class="meta-item song-key">Key: F</span></p>
+<p class="pills"><i class="k7">Ado</i></p>
 <div class="controls">
   <button data-action="toggle-chords">Chords</button>
   <div class="stepper">
@@ -1572,9 +1648,10 @@ z2 z &quot;F&quot;C | F G A &quot;Bb&quot;B | A c B3/2 A/ |" data-tab=""></div>
 <div class="verse"><div class="line-pair"><div class="chord-line">F        Dm       Bb</div>Gloria a Cristo Jesús;</div><div class="line-pair"><div class="chord-line">C        Bb F              F    C</div>cielos y tierras, bendecid al Señor;</div><div class="line-pair"><div class="chord-line">C       F            C            Dm</div>honor y gloria a ti, Rey de la gloria,</div><div class="line-pair"><div class="chord-line"> C   Dm      F         Bb       C F</div>amor por siempre a ti, Dios del Amor.</div></div>
 </div>
 </article>
-<article class="song" id="song-entrada-como_el_padre_me_amo" data-title="Como el Padre me amó" data-autor="popular" style="--chars: 30">
+<article class="song" id="song-entrada-como_el_padre_me_amo" data-title="Como el Padre me amó" data-autor="popular" data-key="D" style="--chars: 30">
 <h3>8. Como el Padre me amó - popular</h3>
-<p class="song-meta"><span class="meta-item">Autor: popular</span></p>
+<p class="song-meta"><span class="meta-item">Autor: popular</span><span class="meta-item song-key">Key: D</span></p>
+<p class="pills"><i class="k0">Mis</i><i class="k1">Ent</i><i class="k6">Com</i></p>
 <div class="controls">
   <button data-action="toggle-chords">Chords</button>
   <div class="stepper">
@@ -1602,9 +1679,10 @@ z2 z &quot;F&quot;C | F G A &quot;Bb&quot;B | A c B3/2 A/ |" data-tab=""></div>
 <div class="verse"><div class="line-pair bold"><div class="chord-line">D       A     Bm  F#m</div>Como el Padre me amó,</div><div class="line-pair bold"><div class="chord-line">G     Em  A  A7</div>yo os he amado.</div><div class="line-pair bold"><div class="chord-line">D     A       Bm  F#m</div>Permaneced en mi amor,</div><div class="line-pair bold"><div class="chord-line">G     A           D <span class="sep">(</span>A7<span class="sep">)</span></div>permaneced en mi amor.</div></div>
 </div>
 </article>
-<article class="song" id="song-cordero-cordero_de_dios_gregoriana" data-title="Cordero de Dios (173)" data-autor="Gregoriana (s. XII) - Misa XVIII «De Angelis»" style="--chars: 37">
+<article class="song" id="song-cordero-cordero_de_dios_gregoriana" data-title="Cordero de Dios (173)" data-autor="Gregoriana (s. XII) - Misa XVIII «De Angelis»" data-key="Am" style="--chars: 37">
 <h3>9. Cordero de Dios (173) - Gregoriana (s. XII) - Misa XVIII «De Angelis»</h3>
-<p class="song-meta"><span class="meta-item">Autor: Gregoriana (s. XII) - Misa XVIII «De Angelis»</span></p>
+<p class="song-meta"><span class="meta-item">Autor: Gregoriana (s. XII) - Misa XVIII «De Angelis»</span><span class="meta-item song-key">Key: Am</span></p>
+<p class="pills"><i class="k0">Mis</i><i class="k5">Cor</i></p>
 <div class="controls">
   <button data-action="toggle-chords">Chords</button>
   <div class="stepper">
@@ -1631,9 +1709,10 @@ L:1/8
 <div class="verse"><div class="line-pair"><div class="chord-line">Em    Am       F                 Dm</div>Agnus Dei, qui tollis peccata mundi:</div><div class="line-pair"><div class="chord-line">G         Em</div>miserere nobis.</div><div class="line-pair"><div class="chord-line">      Am       F                 Dm</div>Agnus Dei, qui tollis peccata mundi:</div><div class="line-pair"><div class="chord-line">G         Em</div>miserere nobis.</div><div class="line-pair"><div class="chord-line">      Am       F                 Dm G</div>Agnus Dei, qui tollis peccata mundi:</div><div class="line-pair"><div class="chord-line">           Em G</div>dona nobis pacem.</div></div>
 </div>
 </article>
-<article class="song" id="song-cordero-cordero_de_dios_aragues" data-title="Cordero de Dios (174)" data-autor="T. Aragüés" style="--chars: 48">
+<article class="song" id="song-cordero-cordero_de_dios_aragues" data-title="Cordero de Dios (174)" data-autor="T. Aragüés" data-key="F" style="--chars: 48">
 <h3>10. Cordero de Dios (174) - T. Aragüés</h3>
-<p class="song-meta"><span class="meta-item">Autor: T. Aragüés</span></p>
+<p class="song-meta"><span class="meta-item">Autor: T. Aragüés</span><span class="meta-item song-key">Key: F</span></p>
+<p class="pills"><i class="k0">Mis</i><i class="k5">Cor</i></p>
 <div class="controls">
   <button data-action="toggle-chords">Chords</button>
   <div class="stepper">
@@ -1660,9 +1739,10 @@ z &quot;F&quot;A A G F &quot;C&quot;c2 c c c c c &quot;Bb&quot;d c c &quot;F&quo
 <div class="verse"><div class="line-pair"><div class="chord-line">F          C                    Bb      F</div>Cordero de Dios, que quitas el pecado del mundo,</div><div class="line-pair"><div class="chord-line">    Dm               C</div>ten piedad de nosotros.</div><div class="line-pair"><div class="chord-line">F          C                    Bb      F</div>Cordero de Dios, que quitas el pecado del mundo,</div><div class="line-pair"><div class="chord-line">    Dm               C</div>ten piedad de nosotros.</div><div class="line-pair"><div class="chord-line">F          C                    Bb      F</div>Cordero de Dios, que quitas el pecado del mundo,</div><div class="line-pair"><div class="chord-line">Dm C  Bb F</div>danos la paz.</div></div>
 </div>
 </article>
-<article class="song" id="song-cordero-cordero_de_dios_palazon" data-title="Cordero de Dios (179)" data-autor="F. Palazón" style="--chars: 48">
+<article class="song" id="song-cordero-cordero_de_dios_palazon" data-title="Cordero de Dios (179)" data-autor="F. Palazón" data-key="F" style="--chars: 48">
 <h3>11. Cordero de Dios (179) - F. Palazón</h3>
-<p class="song-meta"><span class="meta-item">Autor: F. Palazón</span></p>
+<p class="song-meta"><span class="meta-item">Autor: F. Palazón</span><span class="meta-item song-key">Key: F</span></p>
+<p class="pills"><i class="k0">Mis</i><i class="k5">Cor</i></p>
 <div class="controls">
   <button data-action="toggle-chords">Chords</button>
   <div class="stepper">
@@ -1690,9 +1770,10 @@ z2 z &quot;F&quot;A | A2 F G | &quot;Am&quot;A3 A | &quot;C&quot;c B A A | &quot
 <div class="verse"><div class="line-pair"><div class="chord-line">    F           Am      C</div>Cordero de Dios, que quitas el pe-</div><div class="line-pair"><div class="chord-line">Dm         F            Bb   Gm         Am</div>cado del mundo, ten piedad de nosotros.</div><div class="line-pair"><div class="chord-line"><span class="sep">(</span>Dm<span class="sep">)</span></div>Cor-</div><div class="line-pair"><div class="chord-line">Bb          F              Gm         F       Bb</div>dero de Dios, que quitas el pecado del mundo,</div><div class="line-pair"><div class="chord-line">      C          Dm</div>ten piedad de nosotros.</div><div class="line-pair"><div class="chord-line">    F           Am</div>Cordero de Dios, que</div><div class="line-pair"><div class="chord-line">C                   Dm       F</div>quitas el pecado del mundo,</div><div class="line-pair"><div class="chord-line">Gm   <span class="sep">(</span>Bb<span class="sep">)</span> F      C     Dm</div>danos la paz, danos la paz.</div></div>
 </div>
 </article>
-<article class="song" id="song-cordero-cordero_de_dios_jauregui" data-title="Cordero de Dios (180)" data-autor="J. Jáuregui" style="--chars: 41">
+<article class="song" id="song-cordero-cordero_de_dios_jauregui" data-title="Cordero de Dios (180)" data-autor="J. Jáuregui" data-key="D" style="--chars: 41">
 <h3>12. Cordero de Dios (180) - J. Jáuregui</h3>
-<p class="song-meta"><span class="meta-item">Autor: J. Jáuregui</span></p>
+<p class="song-meta"><span class="meta-item">Autor: J. Jáuregui</span><span class="meta-item song-key">Key: D</span></p>
+<p class="pills"><i class="k0">Mis</i><i class="k5">Cor</i></p>
 <div class="controls">
   <button data-action="toggle-chords">Chords</button>
   <div class="stepper">
@@ -1720,9 +1801,10 @@ D | &quot;D&quot;D2 &quot;Bm&quot;D &quot;A&quot;E | &quot;D&quot;F3 G | &quot;A
 <div class="verse"><div class="line-pair"><div class="chord-line">   D  Bm A  D       A7  D        G</div>Cordero de Dios, que quitas el pecado del</div><div class="line-pair"><div class="chord-line">A       D   A  Bm  G     Em A7</div>mundo, ten piedad de nosotros.</div><div class="line-pair"><div class="chord-line">   D  Bm A  D       A7  D        G</div>Cordero de Dios, que quitas el pecado del</div><div class="line-pair"><div class="chord-line">A       D   A  Bm  G     Em A7</div>mundo, ten piedad de nosotros.</div><div class="line-pair"><div class="chord-line">   D  Bm A  D       A7  D       Bm G</div>Cordero de Dios, que quitas el pecado del</div><div class="line-pair"><div class="chord-line">A       D     A  Bm</div>mundo. Dános la paz.</div><div class="line-pair"><div class="chord-line">Em        A    D    G  D</div>Dános la paz. Dános la paz.</div></div>
 </div>
 </article>
-<article class="song" id="song-cordero-cordero_de_dios_taule" data-title="Cordero de Dios (183)" data-autor="A. Taulé" style="--chars: 27">
+<article class="song" id="song-cordero-cordero_de_dios_taule" data-title="Cordero de Dios (183)" data-autor="A. Taulé" data-key="D" style="--chars: 27">
 <h3>13. Cordero de Dios (183) - A. Taulé</h3>
-<p class="song-meta"><span class="meta-item">Autor: A. Taulé</span></p>
+<p class="song-meta"><span class="meta-item">Autor: A. Taulé</span><span class="meta-item song-key">Key: D</span></p>
+<p class="pills"><i class="k0">Mis</i><i class="k5">Cor</i></p>
 <div class="controls">
   <button data-action="toggle-chords">Chords</button>
   <div class="stepper">
@@ -1751,9 +1833,10 @@ F2 | &quot;D&quot;F2 F G A2 D2 | &quot;Em&quot;E2 E2- E z E F |" data-tab=""></d
 <div class="verse"><div class="line-pair"><div class="chord-line">    D                   Em</div>Cordero de Dios, que quitas</div><div class="line-pair"><div class="chord-line">      A7      D      D7</div>el pecado del mundo,</div><div class="line-pair"><div class="chord-line">        G  A7    D    Bm7</div>ten piedad de nosotros</div><div class="line-pair"><div class="chord-line">  Em   A7  D</div>y danos la paz.</div></div>
 </div>
 </article>
-<article class="song" id="song-aclamacion_memorial-este_es_el_sacramento" data-title="Éste es el Sacramento de nuestra fe (149)" data-autor="Anónima" style="--chars: 36">
+<article class="song" id="song-aclamacion_memorial-este_es_el_sacramento" data-title="Éste es el Sacramento de nuestra fe (149)" data-autor="Anónima" data-key="Em" style="--chars: 36">
 <h3>14. Éste es el Sacramento de nuestra fe (149) - Anónima</h3>
-<p class="song-meta"><span class="meta-item">Autor: Anónima</span></p>
+<p class="song-meta"><span class="meta-item">Autor: Anónima</span><span class="meta-item song-key">Key: Em</span></p>
+<p class="pills"><i class="k0">Mis</i><i class="k4">Acl</i></p>
 <div class="controls">
   <button data-action="toggle-chords">Chords</button>
   <div class="stepper">
@@ -1782,9 +1865,10 @@ B8 c2 B2 A4 |]" data-tab=""></div>
 <div class="verse"><div class="lyric-line">O bien:</div><div class="lyric-line">Éste es el Misterio de la fe.</div></div>
 </div>
 </article>
-<article class="song" id="song-comunion-hambre_de_dios" data-title="Hambre de Dios (200)" data-autor="J. A. Espinosa" style="--chars: 54">
+<article class="song" id="song-comunion-hambre_de_dios" data-title="Hambre de Dios (200)" data-autor="J. A. Espinosa" data-key="F" style="--chars: 54">
 <h3>15. Hambre de Dios (200) - J. A. Espinosa</h3>
-<p class="song-meta"><span class="meta-item">Autor: J. A. Espinosa</span></p>
+<p class="song-meta"><span class="meta-item">Autor: J. A. Espinosa</span><span class="meta-item song-key">Key: F</span></p>
+<p class="pills"><i class="k0">Mis</i><i class="k6">Com</i></p>
 <div class="controls">
   <button data-action="toggle-chords">Chords</button>
   <div class="stepper">
@@ -1818,9 +1902,10 @@ L:1/8
 <div class="verse"><div class="line-pair bold"><div class="chord-line">F          Bb  F                      Gm7 C7</div>No podemos caminar con hambre bajo el sol.</div><div class="line-pair bold"><div class="chord-line">F                Bb    F                   Bb     F</div>Danos siempre el mismo pan: tu Cuerpo y Sangre, Señor.</div></div>
 </div>
 </article>
-<article class="song" id="song-comunion-oh_buen_jesus_leon" data-title="Oh buen Jesús (197)" data-autor="H. León" style="--chars: 41">
+<article class="song" id="song-comunion-oh_buen_jesus_leon" data-title="Oh buen Jesús (197)" data-autor="H. León" data-key="Em" style="--chars: 41">
 <h3>16. Oh buen Jesús (197) - H. León</h3>
-<p class="song-meta"><span class="meta-item">Autor: H. León</span></p>
+<p class="song-meta"><span class="meta-item">Autor: H. León</span><span class="meta-item song-key">Key: Em</span></p>
+<p class="pills"><i class="k0">Mis</i><i class="k6">Com</i></p>
 <div class="controls">
   <button data-action="toggle-chords">Chords</button>
   <div class="stepper">
@@ -1853,9 +1938,10 @@ L:1/8
 <div class="verse"><div class="line-pair"><div class="chord-line">Em <span class="sep">(</span>G<span class="sep">)</span> Em C        D      Bm</div>Dulce maná de celestial comida,</div><div class="line-pair"><div class="chord-line">G        Am      C           Bm</div>gozo y salud del que te come bien,</div><div class="line-pair"><div class="chord-line"><span class="sep">(</span>D<span class="sep">)</span> Am     D    C                   G D</div>ven sin tardar, mi Dios, mi Luz, mi Vida;</div><div class="line-pair"><div class="chord-line">Am                 C     G <span class="sep">(</span>D<span class="sep">)</span> Em</div>desciende a mí, hasta mi pecho ven,</div><div class="line-pair"><div class="chord-line">Am                 C     G D   Em</div>desciende a mí, hasta mi pecho ven.</div></div>
 </div>
 </article>
-<article class="song" id="song-entrada-reunidos_en_el_nombre_del_senor" data-title="Reunidos en el nombre del Señor" data-autor="popular" style="--chars: 38">
+<article class="song" id="song-entrada-reunidos_en_el_nombre_del_senor" data-title="Reunidos en el nombre del Señor" data-autor="popular" data-key="G" style="--chars: 38">
 <h3>17. Reunidos en el nombre del Señor - popular</h3>
-<p class="song-meta"><span class="meta-item">Autor: popular</span></p>
+<p class="song-meta"><span class="meta-item">Autor: popular</span><span class="meta-item song-key">Key: G</span></p>
+<p class="pills"><i class="k0">Mis</i><i class="k1">Ent</i></p>
 <div class="controls">
   <button data-action="toggle-chords">Chords</button>
   <div class="stepper">
@@ -1879,9 +1965,10 @@ L:1/8
 <div class="verse"><div class="line-pair bold"><div class="chord-line">   G           C            G</div>Reunidos en el nombre del Señor</div><div class="line-pair bold"><div class="chord-line">        C        A7              D</div>que nos ha congregado ante su altar.</div><div class="line-pair bold"><div class="chord-line">      Am           D7          G  Em</div>/ Celebremos el misterio de la fe</div><div class="line-pair bold"><div class="chord-line">         Am        D7            G</div>bajo el signo del amor y la unidad. /</div></div>
 </div>
 </article>
-<article class="song" id="song-santo-santo_gregoriano" data-title="Santo (131)" data-autor="Gregoriana (s. XIII) - Misa XVIII" style="--chars: 47">
+<article class="song" id="song-santo-santo_gregoriano" data-title="Santo (131)" data-autor="Gregoriana (s. XIII) - Misa XVIII" data-key="Em" style="--chars: 47">
 <h3>18. Santo (131) - Gregoriana (s. XIII) - Misa XVIII</h3>
-<p class="song-meta"><span class="meta-item">Autor: Gregoriana (s. XIII) - Misa XVIII</span></p>
+<p class="song-meta"><span class="meta-item">Autor: Gregoriana (s. XIII) - Misa XVIII</span><span class="meta-item song-key">Key: Em</span></p>
+<p class="pills"><i class="k0">Mis</i><i class="k3">San</i></p>
 <div class="controls">
   <button data-action="toggle-chords">Chords</button>
   <div class="stepper">
@@ -1908,9 +1995,10 @@ L:1/8
 <div class="verse"><div class="line-pair"><div class="chord-line">Em D     Em D             G       Em   D G</div>Sanctus, Sanctus, Sanctus Dóminus Deus Sábaoth.</div><div class="line-pair"><div class="chord-line">      Em              D           G</div>Pleni sunt cæli et terra glória tua.</div><div class="line-pair"><div class="chord-line">  Em       D G  <span class="sep">(</span>Bm<span class="sep">)</span>     <span class="sep">(</span>G<span class="sep">)</span>        Em</div>Hosánna in excélsis. Benedíctus qui venit in</div><div class="line-pair"><div class="chord-line"><span class="sep">(</span>D<span class="sep">)</span>        <span class="sep">(</span>G<span class="sep">)</span>     <span class="sep">(</span>Am<span class="sep">)</span> <span class="sep">(</span>F<span class="sep">)</span>  G  Am</div>nómine Dómini. Hosánna in excélsis.</div></div>
 </div>
 </article>
-<article class="song" id="song-santo-santo_aragues" data-title="Santo (132)" data-autor="T. Aragüés" style="--chars: 51">
+<article class="song" id="song-santo-santo_aragues" data-title="Santo (132)" data-autor="T. Aragüés" data-key="A" style="--chars: 51">
 <h3>19. Santo (132) - T. Aragüés</h3>
-<p class="song-meta"><span class="meta-item">Autor: T. Aragüés</span></p>
+<p class="song-meta"><span class="meta-item">Autor: T. Aragüés</span><span class="meta-item song-key">Key: A</span></p>
+<p class="pills"><i class="k0">Mis</i><i class="k3">San</i></p>
 <div class="controls">
   <button data-action="toggle-chords">Chords</button>
   <div class="stepper">
@@ -1938,9 +2026,10 @@ L:1/8
 <div class="verse"><div class="line-pair"><div class="chord-line">A      E      F#m      E    A    D           E</div>Santo, Santo, Santo es el Señor, Dios del Universo.</div><div class="line-pair"><div class="chord-line">A E    F#m    D          A      F#m   E</div>Llenos están el cielo y la tierra de tu gloria.</div><div class="line-pair"><div class="chord-line">Bm            F#m E A</div>Hosanna en el cie - lo.</div><div class="line-pair"><div class="chord-line">E              F#m      D      F#m   E</div>Bendito el que viene en nombre del Señor.</div><div class="line-pair"><div class="chord-line">Bm            A   E A</div>Hosanna en el cie - lo.</div></div>
 </div>
 </article>
-<article class="song" id="song-santo-santo_manzano" data-title="Santo (133)" data-autor="M. Manzano" style="--chars: 51">
+<article class="song" id="song-santo-santo_manzano" data-title="Santo (133)" data-autor="M. Manzano" data-key="F" style="--chars: 51">
 <h3>20. Santo (133) - M. Manzano</h3>
-<p class="song-meta"><span class="meta-item">Autor: M. Manzano</span></p>
+<p class="song-meta"><span class="meta-item">Autor: M. Manzano</span><span class="meta-item song-key">Key: F</span></p>
+<p class="pills"><i class="k0">Mis</i><i class="k3">San</i></p>
 <div class="controls">
   <button data-action="toggle-chords">Chords</button>
   <div class="stepper">
@@ -1968,9 +2057,10 @@ L:1/8
 <div class="verse"><div class="line-pair"><div class="chord-line">F      Dm     C        Bb   C    Dm       Bb C  F</div>Santo, Santo, Santo es el Señor, Dios del Universo.</div><div class="line-pair"><div class="chord-line">Dm       F      Bb         C            F  Bb F</div>Llenos están el cielo y la tierra de tu glo - ria.</div><div class="line-pair"><div class="chord-line">  Am          F   C F</div>Hosanna en el cie - lo.</div><div class="line-pair"><div class="chord-line">   F           Dm       Bb           C</div>Bendito el que viene en nombre del Señor.</div><div class="line-pair"><div class="chord-line">  Am          F   C F</div>Hosanna en el cie - lo.</div></div>
 </div>
 </article>
-<article class="song" id="song-santo-santo_palazon" data-title="Santo (138)" data-autor="Palazón" style="--chars: 47">
+<article class="song" id="song-santo-santo_palazon" data-title="Santo (138)" data-autor="Palazón" data-key="D" style="--chars: 47">
 <h3>21. Santo (138) - Palazón</h3>
-<p class="song-meta"><span class="meta-item">Autor: Palazón</span></p>
+<p class="song-meta"><span class="meta-item">Autor: Palazón</span><span class="meta-item song-key">Key: D</span></p>
+<p class="pills"><i class="k0">Mis</i><i class="k3">San</i></p>
 <div class="controls">
   <button data-action="toggle-chords">Chords</button>
   <div class="stepper">
@@ -1998,9 +2088,10 @@ L:1/8
 <div class="verse"><div class="line-pair"><div class="chord-line">D      A      G      G             A</div>Santo, Santo, Santo, Santo es el Señor.</div><div class="line-pair"><div class="chord-line">G             D             A     D</div>Santo es el Señor, Dios del Universo.</div><div class="line-pair"><div class="chord-line">G             D             A     D</div>Santo es el Señor, Dios del Universo.</div><div class="line-pair"><div class="chord-line">D        G      D          Bm               A</div>Llenos están el cielo y la tierra de tu gloria.</div><div class="line-pair"><div class="chord-line">A D  F#m   G  D     Em    D     Bm A</div>Hosanna, hosanna, hosanna en el cielo.</div><div class="line-pair"><div class="chord-line">A D  F#m   G  D     G           D     A D</div>Hosanna, hosanna, hosanna en el cie - lo.</div><div class="line-pair"><div class="chord-line">   D    G      D        A          Em   A</div>Bendito el que viene en nombre del Se - ñor.</div><div class="line-pair"><div class="chord-line">A D  F#m   G  D     Em    D     Bm A</div>Hosanna, hosanna, hosanna en el cielo.</div><div class="line-pair"><div class="chord-line">A D  F#m   G  D     G           D     A D</div>Hosanna, hosanna, hosanna en el cie - lo.</div></div>
 </div>
 </article>
-<article class="song" id="song-santo-santo_berthier" data-title="Santo (148)" data-autor="J. Berthier" style="--chars: 32">
+<article class="song" id="song-santo-santo_berthier" data-title="Santo (148)" data-autor="J. Berthier" data-key="F" style="--chars: 32">
 <h3>22. Santo (148) - J. Berthier</h3>
-<p class="song-meta"><span class="meta-item">Autor: J. Berthier</span></p>
+<p class="song-meta"><span class="meta-item">Autor: J. Berthier</span><span class="meta-item song-key">Key: F</span></p>
+<p class="pills"><i class="k0">Mis</i><i class="k3">San</i></p>
 <div class="controls">
   <button data-action="toggle-chords">Chords</button>
   <div class="stepper">
@@ -2032,9 +2123,10 @@ L:1/8
 <div class="verse"><div class="line-pair"><div class="chord-line">F <span class="sep">(</span>C<span class="sep">)</span> Dm       Bb <span class="sep">(</span>C<span class="sep">)</span> F</div>Hosanna en el cie -- lo.</div><div class="line-pair"><div class="chord-line">F <span class="sep">(</span>C<span class="sep">)</span> Dm       Bb <span class="sep">(</span>C<span class="sep">)</span> F</div>Hosanna en el cie -- lo.</div></div>
 </div>
 </article>
-<article class="song" id="song-yo_quiero_ser_tu_servidor_popular" data-title="Yo Quiero Ser Tu Servidor" data-autor="popular" style="--chars: 32">
+<article class="song" id="song-yo_quiero_ser_tu_servidor_popular" data-title="Yo Quiero Ser Tu Servidor" data-autor="popular" data-key="G" style="--chars: 32">
 <h3>23. Yo Quiero Ser Tu Servidor - popular</h3>
-<p class="song-meta"><span class="meta-item">Autor: popular</span><span class="meta-item">Capo: 0</span><a class="meta-item" href="https://open.spotify.com/track/17ciTNtUcQxJ5gRJuLtbNX?si=a0c8c30edc634d0d" target="_blank" rel="noopener">Spotify link</a></p>
+<p class="song-meta"><span class="meta-item">Autor: popular</span><span class="meta-item">Capo: 0</span><span class="meta-item song-key">Key: G</span><a class="meta-item" href="https://open.spotify.com/track/17ciTNtUcQxJ5gRJuLtbNX?si=a0c8c30edc634d0d" target="_blank" rel="noopener">Spotify link</a></p>
+<p class="pills"><i class="k0">Mis</i><i class="k6">Com</i></p>
 <div class="controls">
   <button data-action="toggle-chords">Chords</button>
   <div class="stepper">
@@ -2090,7 +2182,7 @@ L:1/8
 
 <!-- This book's settings (book.yaml) for the scripts below -->
 <script>
-const BOOK = {"storagePrefix": "cancionero-organo.", "notationSetting": true, "installTip": true};
+const BOOK = {"storagePrefix": "cancionero-organo.", "notationSetting": true, "installTip": true, "progress": false};
 </script>
 <!-- Scripts from web/js/, core.js first -->
 <script>
@@ -2502,8 +2594,10 @@ function renderMelody(element, shift = 0, width = 380) {
     // Chord names like the song's chord lines (transpose.js: sharps or flats, Do Re Mi).
     if (typeof transposeChord === "function") {
         const chords = [...abc.matchAll(/"([^"]*)"/g)].map((m) => m[1]);
+        const songKey = element.closest(".song")?.dataset.key;
+        const key = songKey ? movedKey(songKey, shift) : null;
         svg.querySelectorAll(".abcjs-chord").forEach((text, i) => {
-            if (chords[i] !== undefined) text.textContent = transposeChord(chords[i], shift);
+            if (chords[i] !== undefined) text.textContent = transposeChord(chords[i], shift, key);
         });
     }
 
@@ -3394,13 +3488,52 @@ function transposeNote(note, shift) {
     return scale[(((index + shift) % 12) + 12) % 12];
 }
 
+// Songs with a key (data-key, builder/keys.py) move each note by interval within
+// the key: it keeps its letter distance from the tonic (E in C -> F# in D), so the
+// spelling chosen in the song file carries over (Bb, not A#, in F; G#7 before C#m).
+// Notes that would need E#, B#, Cb, Fb or a double accidental take the new key's
+// sharps or flats instead.
+const LETTERS = "CDEFGAB";
+const NATURAL = { C: 0, D: 2, E: 4, F: 5, G: 7, A: 9, B: 11 };
+const MAJOR_KEYS = ["C", "Db", "D", "Eb", "E", "F", "F#", "G", "Ab", "A", "Bb", "B"];
+const MINOR_KEYS = ["Cm", "C#m", "Dm", "Ebm", "Em", "Fm", "F#m", "Gm", "G#m", "Am", "Bbm", "Bm"];
+const FLAT_KEYS = new Set(["F", "Bb", "Eb", "Ab", "Db", "Gb", "Cb", "Dm", "Gm", "Cm", "Fm", "Bbm", "Ebm", "Abm"]);
+
+function pitchOf(note) {
+    return (NATURAL[note[0]] + (note[1] === "#" ? 1 : note[1] === "b" ? -1 : 0) + 12) % 12;
+}
+
+// The song's key moved `shift` semitones: { name, from, to, flats } (from/to: tonics).
+function movedKey(key, shift) {
+    const minor = key.endsWith("m");
+    const tonic = minor ? key.slice(0, -1) : key;
+    const name = shift ? (minor ? MINOR_KEYS : MAJOR_KEYS)[(pitchOf(tonic) + shift + 120) % 12] : key;
+    return { name, from: tonic, to: minor ? name.slice(0, -1) : name, flats: FLAT_KEYS.has(name) };
+}
+
+function moveNote(note, shift, key) {
+    const steps = (LETTERS.indexOf(note[0]) - LETTERS.indexOf(key.from[0]) + 7) % 7;
+    const letter = LETTERS[(LETTERS.indexOf(key.to[0]) + steps) % 7];
+    const pc = (pitchOf(note) + shift + 120) % 12;
+    const accidental = ((pc - NATURAL[letter] + 18) % 12) - 6;
+    const name = letter + ({ 1: "#", "-1": "b", 0: "" }[accidental] ?? "?");
+    if (!name.includes("?") && !["E#", "B#", "Cb", "Fb"].includes(name)) return name;
+    return (key.flats ? NOTES_FLAT : NOTES_SHARP)[pc];
+}
+
 // Chord names: letters (C D E) or solfège (Do Re Mi), a book-wide setting.
 const NOTATIONS = { letters: "C D E", solfege: "Do Re Mi" };
 const SOLFEGE = { C: "Do", D: "Re", E: "Mi", F: "Fa", G: "Sol", A: "La", B: "Si" };
 
-// Transposes the root and the bass note: D/F# +2 -> E/G# (or Mi/Sol#)
-function transposeChord(chord, shift) {
-    const name = chord.replace(NOTE_RE, (note) => transposeNote(note, shift));
+// Transposes the root and the bass note: D/F# +2 -> E/G# (or Mi/Sol#).
+// key: movedKey(...) for songs with a key, else null (sharps stay sharps).
+function transposeChord(chord, shift, key = null) {
+    const name = !shift ? chord
+        : chord.replace(NOTE_RE, (note) => (key ? moveNote(note, shift, key) : transposeNote(note, shift)));
+    return inNotation(name);
+}
+
+function inNotation(name) {
     if (document.body.dataset.notation !== "solfege") return name;
     return name.replace(/[A-G]/g, (letter) => SOLFEGE[letter]); // Am7 -> Lam7
 }
@@ -3476,12 +3609,12 @@ function setChordLine(line, parts) {
     line.replaceChildren(...nodes);
 }
 
-function transposeChordLine(line, shift) {
+function transposeChordLine(line, shift, key) {
     const parts = chordLineParts(line);
     let drift = 0; // columns the next chord would move right (or left if < 0)
     setChordLine(line, parts.map((part, i) => {
         if (i % 2) {
-            const chord = transposeChord(part, shift);
+            const chord = transposeChord(part, shift, key);
             drift += chord.length - part.length;
             return chord;
         }
@@ -3492,14 +3625,14 @@ function transposeChordLine(line, shift) {
 }
 
 // "Intro: G Em ..." lines mix chords and words, so their chords keep a span each.
-function transposeInlineChords(line, shift) {
+function transposeInlineChords(line, shift, key) {
     const nodes = [...line.childNodes];
     let drift = 0; // columns the next chord would move right (or left if < 0)
 
     nodes.forEach((node, i) => {
         if (node.nodeType === Node.ELEMENT_NODE) {
             node.dataset.original ??= node.textContent;
-            const chord = transposeChord(node.dataset.original, shift);
+            const chord = transposeChord(node.dataset.original, shift, key);
             drift += chord.length - node.dataset.original.length;
             node.textContent = chord;
             return;
@@ -3517,11 +3650,14 @@ const builtChars = new WeakMap();
 // grows with it and the lyrics still fit the screen.
 function renderChords(song) {
     const shift = Number(song.dataset.transpose || 0);
+    const key = song.dataset.key ? movedKey(song.dataset.key, shift) : null;
+    const keyLabel = song.querySelector(".song-key");
+    if (keyLabel) keyLabel.textContent = `Key: ${inNotation(key.name)}`;
     if (!builtChars.has(song)) builtChars.set(song, Number(song.style.getPropertyValue("--chars")));
     let widest = builtChars.get(song);
     song.querySelectorAll(".chord-line, .chord-inline").forEach((line) => {
-        if (line.classList.contains("chord-line")) transposeChordLine(line, shift);
-        else transposeInlineChords(line, shift);
+        if (line.classList.contains("chord-line")) transposeChordLine(line, shift, key);
+        else transposeInlineChords(line, shift, key);
         widest = Math.max(widest, line.textContent.length);
     });
     song.style.setProperty("--chars", widest);

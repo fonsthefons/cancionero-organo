@@ -1,5 +1,6 @@
 ---
 title: Cordero de Dios (183)
+key: D
 autor: A. Taulé
 song_tags:
   misa:

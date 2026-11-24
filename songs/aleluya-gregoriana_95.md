@@ -1,5 +1,6 @@
 ---
 title: Aleluya (95)
+key: Am
 autor: Gregoriana
 song_tags:
   misa: [aleluya]

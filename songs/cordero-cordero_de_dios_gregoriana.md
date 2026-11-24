@@ -1,5 +1,6 @@
 ---
 title: Cordero de Dios (173)
+key: Am
 autor: Gregoriana (s. XII) - Misa XVIII «De Angelis»
 song_tags:
   misa:

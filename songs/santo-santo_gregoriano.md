@@ -1,5 +1,6 @@
 ---
 title: Santo (131)
+key: Em
 autor: Gregoriana (s. XIII) - Misa XVIII
 song_tags:
   misa:

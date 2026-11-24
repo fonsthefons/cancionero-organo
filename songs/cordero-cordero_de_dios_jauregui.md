@@ -1,5 +1,6 @@
 ---
 title: Cordero de Dios (180)
+key: D
 autor: J. Jáuregui
 song_tags:
   misa:

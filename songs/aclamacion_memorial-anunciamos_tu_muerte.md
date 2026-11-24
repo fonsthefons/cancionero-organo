@@ -1,5 +1,6 @@
 ---
 title: Anunciamos tu muerte (149)
+key: G
 autor: Anónima
 song_tags:
   misa:

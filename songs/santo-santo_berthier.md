@@ -1,5 +1,6 @@
 ---
 title: Santo (148)
+key: F
 autor: J. Berthier
 song_tags:
   misa:
