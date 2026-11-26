@@ -3,6 +3,7 @@ title: Aleluya (94)
 key: G
 autor: Gregoriana
 song_tags:
+  psalitre: []
   misa: [aleluya]
 melody: |
   K:G

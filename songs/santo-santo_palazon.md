@@ -3,6 +3,7 @@ title: Santo (138)
 key: D
 autor: Palazón
 song_tags:
+  psalitre: []
   misa:
     - santo
 melody: |

@@ -3,6 +3,7 @@ title: Cordero de Dios (179)
 key: F
 autor: F. Palazón
 song_tags:
+  psalitre: []
   misa:
     - cordero
 melody: |

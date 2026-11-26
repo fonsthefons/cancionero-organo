@@ -3,6 +3,7 @@ title: Aleluya (95)
 key: Am
 autor: Gregoriana
 song_tags:
+  psalitre: []
   misa: [aleluya]
 melody: |
   K:C

@@ -3,6 +3,7 @@ title: Aleluya (116)
 key: G
 autor: O'Carrol
 song_tags:
+  psalitre: []
   misa: [aleluya]
 melody: |
   K:G

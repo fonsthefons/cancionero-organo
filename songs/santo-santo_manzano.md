@@ -3,6 +3,7 @@ title: Santo (133)
 key: F
 autor: M. Manzano
 song_tags:
+  psalitre: []
   misa:
     - santo
 melody: |

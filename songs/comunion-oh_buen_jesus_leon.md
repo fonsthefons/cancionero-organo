@@ -3,6 +3,7 @@ title: Oh buen Jesús (197)
 key: Em
 autor: H. León
 song_tags:
+  psalitre: []
   misa: [comunion]
 melody: |
   K:G

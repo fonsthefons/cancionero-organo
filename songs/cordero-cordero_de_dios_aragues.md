@@ -3,6 +3,7 @@ title: Cordero de Dios (174)
 key: F
 autor: T. Aragüés
 song_tags:
+  psalitre: []
   misa:
     - cordero
 melody: |

@@ -3,6 +3,7 @@ title: Como el Padre me amó
 key: D
 autor: popular
 song_tags:
+  psalitre: []
   misa:
     - entrada
     - comunion

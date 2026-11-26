@@ -3,6 +3,7 @@ title: Hambre de Dios (200)
 key: F
 autor: J. A. Espinosa
 song_tags:
+  psalitre: []
   misa:
     - comunion
 melody: |

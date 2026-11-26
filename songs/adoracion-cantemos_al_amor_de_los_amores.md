@@ -3,6 +3,7 @@ title: Cantemos al Amor de los amores (196)
 key: F
 autor: Busca de Sagastizábal
 song_tags:
+  psalitre: []
   adoracion: []
 melody: |
   K:F

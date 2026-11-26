@@ -3,6 +3,7 @@ title: Aleluya (97)
 key: D
 autor: Popular
 song_tags:
+  psalitre: []
   misa: [aleluya]
 melody: |
   K:D
