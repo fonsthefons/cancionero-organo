@@ -891,8 +891,20 @@ body.drawer-open {
     margin: 0 0 12px 6px;
 }
 
-.syllables-toggle[aria-pressed="true"] {
-    font-weight: bold;
+/* On/off buttons (Chords, Columns, Sílabas): a slider before the label, from aria-pressed. */
+.switch::before {
+    content: "";
+    display: inline-block;
+    width: 30px;
+    height: 18px;
+    margin-right: 6px;
+    border-radius: 9px;
+    vertical-align: middle;
+    background: radial-gradient(circle at 9px 50%, #fff 6px, transparent 7px), var(--border);
+}
+
+.switch[aria-pressed="true"]::before {
+    background: radial-gradient(circle at 21px 50%, #fff 6px, transparent 7px), var(--chord);
 }
 
 /* Still being tuned: a small tag on the button says so. */
@@ -1544,13 +1556,13 @@ body.tour-on .drawer .nav {
 <p class="song-meta"><span class="meta-item">Autor: Gregoriana</span><span class="meta-item song-key">Key: G</span></p>
 <p class="pills"><span><i class="k0">Misa</i><i class="k2">Aleluya</i></span><i class="k10">Psalitre</i></p>
 <div class="controls">
-  <button data-action="toggle-chords">Chords</button>
+  <button class="switch" data-action="toggle-chords" aria-pressed="true">Chords</button>
   <div class="stepper">
     <button data-action="transpose-down" aria-label="Transpose down">−</button>
     <button class="transpose-value" data-action="transpose-reset" aria-label="Reset transpose">0</button>
     <button data-action="transpose-up" aria-label="Transpose up">+</button>
   </div>
-  <button data-action="toggle-columns">Columns</button>
+  <button class="switch" data-action="toggle-columns" aria-pressed="false">Columns</button>
   <div class="stepper">
     <button data-action="song-text-smaller" aria-label="Smaller text">A−</button>
     <button class="song-scale-value" data-action="song-text-reset" aria-label="Reset text size">100%</button>
@@ -1574,13 +1586,13 @@ L:1/8
 <p class="song-meta"><span class="meta-item">Autor: Gregoriana</span><span class="meta-item song-key">Key: Am</span></p>
 <p class="pills"><span><i class="k0">Misa</i><i class="k2">Aleluya</i></span><i class="k10">Psalitre</i></p>
 <div class="controls">
-  <button data-action="toggle-chords">Chords</button>
+  <button class="switch" data-action="toggle-chords" aria-pressed="true">Chords</button>
   <div class="stepper">
     <button data-action="transpose-down" aria-label="Transpose down">−</button>
     <button class="transpose-value" data-action="transpose-reset" aria-label="Reset transpose">0</button>
     <button data-action="transpose-up" aria-label="Transpose up">+</button>
   </div>
-  <button data-action="toggle-columns">Columns</button>
+  <button class="switch" data-action="toggle-columns" aria-pressed="false">Columns</button>
   <div class="stepper">
     <button data-action="song-text-smaller" aria-label="Smaller text">A−</button>
     <button class="song-scale-value" data-action="song-text-reset" aria-label="Reset text size">100%</button>
@@ -1604,13 +1616,13 @@ L:1/8
 <p class="song-meta"><span class="meta-item">Autor: Popular</span><span class="meta-item song-key">Key: D</span></p>
 <p class="pills"><span><i class="k0">Misa</i><i class="k2">Aleluya</i></span><i class="k10">Psalitre</i></p>
 <div class="controls">
-  <button data-action="toggle-chords">Chords</button>
+  <button class="switch" data-action="toggle-chords" aria-pressed="true">Chords</button>
   <div class="stepper">
     <button data-action="transpose-down" aria-label="Transpose down">−</button>
     <button class="transpose-value" data-action="transpose-reset" aria-label="Reset transpose">0</button>
     <button data-action="transpose-up" aria-label="Transpose up">+</button>
   </div>
-  <button data-action="toggle-columns">Columns</button>
+  <button class="switch" data-action="toggle-columns" aria-pressed="false">Columns</button>
   <div class="stepper">
     <button data-action="song-text-smaller" aria-label="Smaller text">A−</button>
     <button class="song-scale-value" data-action="song-text-reset" aria-label="Reset text size">100%</button>
@@ -1636,13 +1648,13 @@ L:1/8
 <p class="song-meta"><span class="meta-item">Autor: O&#x27;Carrol</span><span class="meta-item song-key">Key: G</span></p>
 <p class="pills"><span><i class="k0">Misa</i><i class="k2">Aleluya</i></span><i class="k10">Psalitre</i></p>
 <div class="controls">
-  <button data-action="toggle-chords">Chords</button>
+  <button class="switch" data-action="toggle-chords" aria-pressed="true">Chords</button>
   <div class="stepper">
     <button data-action="transpose-down" aria-label="Transpose down">−</button>
     <button class="transpose-value" data-action="transpose-reset" aria-label="Reset transpose">0</button>
     <button data-action="transpose-up" aria-label="Transpose up">+</button>
   </div>
-  <button data-action="toggle-columns">Columns</button>
+  <button class="switch" data-action="toggle-columns" aria-pressed="false">Columns</button>
   <div class="stepper">
     <button data-action="song-text-smaller" aria-label="Smaller text">A−</button>
     <button class="song-scale-value" data-action="song-text-reset" aria-label="Reset text size">100%</button>
@@ -1667,13 +1679,13 @@ L:1/8
 <p class="song-meta"><span class="meta-item">Autor: Marco Frisina</span><span class="meta-item">Capo: 0, 0-3, original 1</span><span class="meta-item song-key">Key: Am</span><a class="meta-item" href="https://open.spotify.com/track/4TBTjp370FcPhGWAQP3NwD" target="_blank" rel="noopener">Spotify link</a></p>
 <p class="pills"><span><i class="k0">Misa</i><i class="k6">Comunion</i></span><i class="k7">Adoracion</i><i class="k9">Latin</i></p>
 <div class="controls">
-  <button data-action="toggle-chords">Chords</button>
+  <button class="switch" data-action="toggle-chords" aria-pressed="true">Chords</button>
   <div class="stepper">
     <button data-action="transpose-down" aria-label="Transpose down">−</button>
     <button class="transpose-value" data-action="transpose-reset" aria-label="Reset transpose">0</button>
     <button data-action="transpose-up" aria-label="Transpose up">+</button>
   </div>
-  <button data-action="toggle-columns">Columns</button>
+  <button class="switch" data-action="toggle-columns" aria-pressed="false">Columns</button>
   <div class="stepper">
     <button data-action="song-text-smaller" aria-label="Smaller text">A−</button>
     <button class="song-scale-value" data-action="song-text-reset" aria-label="Reset text size">100%</button>
@@ -1697,13 +1709,13 @@ L:1/8
 <p class="song-meta"><span class="meta-item">Autor: Anónima</span><span class="meta-item song-key">Key: G</span></p>
 <p class="pills"><span><i class="k0">Misa</i><i class="k4">Aclamacion Memorial</i></span><i class="k10">Psalitre</i></p>
 <div class="controls">
-  <button data-action="toggle-chords">Chords</button>
+  <button class="switch" data-action="toggle-chords" aria-pressed="true">Chords</button>
   <div class="stepper">
     <button data-action="transpose-down" aria-label="Transpose down">−</button>
     <button class="transpose-value" data-action="transpose-reset" aria-label="Reset transpose">0</button>
     <button data-action="transpose-up" aria-label="Transpose up">+</button>
   </div>
-  <button data-action="toggle-columns">Columns</button>
+  <button class="switch" data-action="toggle-columns" aria-pressed="false">Columns</button>
   <div class="stepper">
     <button data-action="song-text-smaller" aria-label="Smaller text">A−</button>
     <button class="song-scale-value" data-action="song-text-reset" aria-label="Reset text size">100%</button>
@@ -1728,13 +1740,13 @@ L:1/8
 <p class="song-meta"><span class="meta-item">Autor: Gilberto Ley Peña</span><span class="meta-item song-key">Key: C</span></p>
 <p class="pills"><span><i class="k0">Misa</i><i class="k1">Entrada</i></span><i class="k8">Español</i></p>
 <div class="controls">
-  <button data-action="toggle-chords">Chords</button>
+  <button class="switch" data-action="toggle-chords" aria-pressed="true">Chords</button>
   <div class="stepper">
     <button data-action="transpose-down" aria-label="Transpose down">−</button>
     <button class="transpose-value" data-action="transpose-reset" aria-label="Reset transpose">0</button>
     <button data-action="transpose-up" aria-label="Transpose up">+</button>
   </div>
-  <button data-action="toggle-columns">Columns</button>
+  <button class="switch" data-action="toggle-columns" aria-pressed="false">Columns</button>
   <div class="stepper">
     <button data-action="song-text-smaller" aria-label="Smaller text">A−</button>
     <button class="song-scale-value" data-action="song-text-reset" aria-label="Reset text size">100%</button>
@@ -1758,13 +1770,13 @@ L:1/8
 <p class="song-meta"><span class="meta-item">Autor: Busca de Sagastizábal</span><span class="meta-item song-key">Key: F</span></p>
 <p class="pills"><i class="k7">Adoracion</i><i class="k10">Psalitre</i></p>
 <div class="controls">
-  <button data-action="toggle-chords">Chords</button>
+  <button class="switch" data-action="toggle-chords" aria-pressed="true">Chords</button>
   <div class="stepper">
     <button data-action="transpose-down" aria-label="Transpose down">−</button>
     <button class="transpose-value" data-action="transpose-reset" aria-label="Reset transpose">0</button>
     <button data-action="transpose-up" aria-label="Transpose up">+</button>
   </div>
-  <button data-action="toggle-columns">Columns</button>
+  <button class="switch" data-action="toggle-columns" aria-pressed="false">Columns</button>
   <div class="stepper">
     <button data-action="song-text-smaller" aria-label="Smaller text">A−</button>
     <button class="song-scale-value" data-action="song-text-reset" aria-label="Reset text size">100%</button>
@@ -1790,13 +1802,13 @@ z2 z &quot;F&quot;C | F G A &quot;Bb&quot;B | A c B3/2 A/ |" data-tab=""></div>
 <p class="song-meta"><span class="meta-item">Autor: popular</span><span class="meta-item song-key">Key: D</span></p>
 <p class="pills"><span><i class="k0">Misa</i><i class="k1">Entrada</i><i class="k6">Comunion</i></span><i class="k10">Psalitre</i></p>
 <div class="controls">
-  <button data-action="toggle-chords">Chords</button>
+  <button class="switch" data-action="toggle-chords" aria-pressed="true">Chords</button>
   <div class="stepper">
     <button data-action="transpose-down" aria-label="Transpose down">−</button>
     <button class="transpose-value" data-action="transpose-reset" aria-label="Reset transpose">0</button>
     <button data-action="transpose-up" aria-label="Transpose up">+</button>
   </div>
-  <button data-action="toggle-columns">Columns</button>
+  <button class="switch" data-action="toggle-columns" aria-pressed="false">Columns</button>
   <div class="stepper">
     <button data-action="song-text-smaller" aria-label="Smaller text">A−</button>
     <button class="song-scale-value" data-action="song-text-reset" aria-label="Reset text size">100%</button>
@@ -1821,13 +1833,13 @@ z2 z &quot;F&quot;C | F G A &quot;Bb&quot;B | A c B3/2 A/ |" data-tab=""></div>
 <p class="song-meta"><span class="meta-item">Autor: Gregoriana (s. XII) - Misa XVIII «De Angelis»</span><span class="meta-item song-key">Key: Am</span></p>
 <p class="pills"><span><i class="k0">Misa</i><i class="k5">Cordero</i></span><i class="k10">Psalitre</i></p>
 <div class="controls">
-  <button data-action="toggle-chords">Chords</button>
+  <button class="switch" data-action="toggle-chords" aria-pressed="true">Chords</button>
   <div class="stepper">
     <button data-action="transpose-down" aria-label="Transpose down">−</button>
     <button class="transpose-value" data-action="transpose-reset" aria-label="Reset transpose">0</button>
     <button data-action="transpose-up" aria-label="Transpose up">+</button>
   </div>
-  <button data-action="toggle-columns">Columns</button>
+  <button class="switch" data-action="toggle-columns" aria-pressed="false">Columns</button>
   <div class="stepper">
     <button data-action="song-text-smaller" aria-label="Smaller text">A−</button>
     <button class="song-scale-value" data-action="song-text-reset" aria-label="Reset text size">100%</button>
@@ -1851,13 +1863,13 @@ L:1/8
 <p class="song-meta"><span class="meta-item">Autor: T. Aragüés</span><span class="meta-item song-key">Key: F</span></p>
 <p class="pills"><span><i class="k0">Misa</i><i class="k5">Cordero</i></span><i class="k10">Psalitre</i></p>
 <div class="controls">
-  <button data-action="toggle-chords">Chords</button>
+  <button class="switch" data-action="toggle-chords" aria-pressed="true">Chords</button>
   <div class="stepper">
     <button data-action="transpose-down" aria-label="Transpose down">−</button>
     <button class="transpose-value" data-action="transpose-reset" aria-label="Reset transpose">0</button>
     <button data-action="transpose-up" aria-label="Transpose up">+</button>
   </div>
-  <button data-action="toggle-columns">Columns</button>
+  <button class="switch" data-action="toggle-columns" aria-pressed="false">Columns</button>
   <div class="stepper">
     <button data-action="song-text-smaller" aria-label="Smaller text">A−</button>
     <button class="song-scale-value" data-action="song-text-reset" aria-label="Reset text size">100%</button>
@@ -1881,13 +1893,13 @@ z &quot;F&quot;A A G F &quot;C&quot;c2 c c c c c &quot;Bb&quot;d c c &quot;F&quo
 <p class="song-meta"><span class="meta-item">Autor: F. Palazón</span><span class="meta-item song-key">Key: F</span></p>
 <p class="pills"><span><i class="k0">Misa</i><i class="k5">Cordero</i></span><i class="k10">Psalitre</i></p>
 <div class="controls">
-  <button data-action="toggle-chords">Chords</button>
+  <button class="switch" data-action="toggle-chords" aria-pressed="true">Chords</button>
   <div class="stepper">
     <button data-action="transpose-down" aria-label="Transpose down">−</button>
     <button class="transpose-value" data-action="transpose-reset" aria-label="Reset transpose">0</button>
     <button data-action="transpose-up" aria-label="Transpose up">+</button>
   </div>
-  <button data-action="toggle-columns">Columns</button>
+  <button class="switch" data-action="toggle-columns" aria-pressed="false">Columns</button>
   <div class="stepper">
     <button data-action="song-text-smaller" aria-label="Smaller text">A−</button>
     <button class="song-scale-value" data-action="song-text-reset" aria-label="Reset text size">100%</button>
@@ -1912,13 +1924,13 @@ z2 z &quot;F&quot;A | A2 F G | &quot;Am&quot;A3 A | &quot;C&quot;c B A A | &quot
 <p class="song-meta"><span class="meta-item">Autor: J. Jáuregui</span><span class="meta-item song-key">Key: D</span></p>
 <p class="pills"><span><i class="k0">Misa</i><i class="k5">Cordero</i></span><i class="k10">Psalitre</i></p>
 <div class="controls">
-  <button data-action="toggle-chords">Chords</button>
+  <button class="switch" data-action="toggle-chords" aria-pressed="true">Chords</button>
   <div class="stepper">
     <button data-action="transpose-down" aria-label="Transpose down">−</button>
     <button class="transpose-value" data-action="transpose-reset" aria-label="Reset transpose">0</button>
     <button data-action="transpose-up" aria-label="Transpose up">+</button>
   </div>
-  <button data-action="toggle-columns">Columns</button>
+  <button class="switch" data-action="toggle-columns" aria-pressed="false">Columns</button>
   <div class="stepper">
     <button data-action="song-text-smaller" aria-label="Smaller text">A−</button>
     <button class="song-scale-value" data-action="song-text-reset" aria-label="Reset text size">100%</button>
@@ -1943,13 +1955,13 @@ D | &quot;D&quot;D2 &quot;Bm&quot;D &quot;A&quot;E | &quot;D&quot;F3 G | &quot;A
 <p class="song-meta"><span class="meta-item">Autor: A. Taulé</span><span class="meta-item song-key">Key: D</span></p>
 <p class="pills"><span><i class="k0">Misa</i><i class="k5">Cordero</i></span><i class="k10">Psalitre</i></p>
 <div class="controls">
-  <button data-action="toggle-chords">Chords</button>
+  <button class="switch" data-action="toggle-chords" aria-pressed="true">Chords</button>
   <div class="stepper">
     <button data-action="transpose-down" aria-label="Transpose down">−</button>
     <button class="transpose-value" data-action="transpose-reset" aria-label="Reset transpose">0</button>
     <button data-action="transpose-up" aria-label="Transpose up">+</button>
   </div>
-  <button data-action="toggle-columns">Columns</button>
+  <button class="switch" data-action="toggle-columns" aria-pressed="false">Columns</button>
   <div class="stepper">
     <button data-action="song-text-smaller" aria-label="Smaller text">A−</button>
     <button class="song-scale-value" data-action="song-text-reset" aria-label="Reset text size">100%</button>
@@ -1975,13 +1987,13 @@ F2 | &quot;D&quot;F2 F G A2 D2 | &quot;Em&quot;E2 E2- E z E F |" data-tab=""></d
 <p class="song-meta"><span class="meta-item">Autor: Anónima</span><span class="meta-item song-key">Key: Em</span></p>
 <p class="pills"><span><i class="k0">Misa</i><i class="k4">Aclamacion Memorial</i></span><i class="k10">Psalitre</i></p>
 <div class="controls">
-  <button data-action="toggle-chords">Chords</button>
+  <button class="switch" data-action="toggle-chords" aria-pressed="true">Chords</button>
   <div class="stepper">
     <button data-action="transpose-down" aria-label="Transpose down">−</button>
     <button class="transpose-value" data-action="transpose-reset" aria-label="Reset transpose">0</button>
     <button data-action="transpose-up" aria-label="Transpose up">+</button>
   </div>
-  <button data-action="toggle-columns">Columns</button>
+  <button class="switch" data-action="toggle-columns" aria-pressed="false">Columns</button>
   <div class="stepper">
     <button data-action="song-text-smaller" aria-label="Smaller text">A−</button>
     <button class="song-scale-value" data-action="song-text-reset" aria-label="Reset text size">100%</button>
@@ -2007,13 +2019,13 @@ B8 c2 B2 A4 |]" data-tab=""></div>
 <p class="song-meta"><span class="meta-item">Autor: J. A. Espinosa</span><span class="meta-item song-key">Key: F</span></p>
 <p class="pills"><span><i class="k0">Misa</i><i class="k6">Comunion</i></span><i class="k10">Psalitre</i></p>
 <div class="controls">
-  <button data-action="toggle-chords">Chords</button>
+  <button class="switch" data-action="toggle-chords" aria-pressed="true">Chords</button>
   <div class="stepper">
     <button data-action="transpose-down" aria-label="Transpose down">−</button>
     <button class="transpose-value" data-action="transpose-reset" aria-label="Reset transpose">0</button>
     <button data-action="transpose-up" aria-label="Transpose up">+</button>
   </div>
-  <button data-action="toggle-columns">Columns</button>
+  <button class="switch" data-action="toggle-columns" aria-pressed="false">Columns</button>
   <div class="stepper">
     <button data-action="song-text-smaller" aria-label="Smaller text">A−</button>
     <button class="song-scale-value" data-action="song-text-reset" aria-label="Reset text size">100%</button>
@@ -2044,13 +2056,13 @@ L:1/8
 <p class="song-meta"><span class="meta-item">Autor: H. León</span><span class="meta-item song-key">Key: Em</span></p>
 <p class="pills"><span><i class="k0">Misa</i><i class="k6">Comunion</i></span><i class="k10">Psalitre</i></p>
 <div class="controls">
-  <button data-action="toggle-chords">Chords</button>
+  <button class="switch" data-action="toggle-chords" aria-pressed="true">Chords</button>
   <div class="stepper">
     <button data-action="transpose-down" aria-label="Transpose down">−</button>
     <button class="transpose-value" data-action="transpose-reset" aria-label="Reset transpose">0</button>
     <button data-action="transpose-up" aria-label="Transpose up">+</button>
   </div>
-  <button data-action="toggle-columns">Columns</button>
+  <button class="switch" data-action="toggle-columns" aria-pressed="false">Columns</button>
   <div class="stepper">
     <button data-action="song-text-smaller" aria-label="Smaller text">A−</button>
     <button class="song-scale-value" data-action="song-text-reset" aria-label="Reset text size">100%</button>
@@ -2080,13 +2092,13 @@ L:1/8
 <p class="song-meta"><span class="meta-item">Autor: popular</span><span class="meta-item song-key">Key: G</span></p>
 <p class="pills"><span><i class="k0">Misa</i><i class="k1">Entrada</i></span><i class="k10">Psalitre</i></p>
 <div class="controls">
-  <button data-action="toggle-chords">Chords</button>
+  <button class="switch" data-action="toggle-chords" aria-pressed="true">Chords</button>
   <div class="stepper">
     <button data-action="transpose-down" aria-label="Transpose down">−</button>
     <button class="transpose-value" data-action="transpose-reset" aria-label="Reset transpose">0</button>
     <button data-action="transpose-up" aria-label="Transpose up">+</button>
   </div>
-  <button data-action="toggle-columns">Columns</button>
+  <button class="switch" data-action="toggle-columns" aria-pressed="false">Columns</button>
   <div class="stepper">
     <button data-action="song-text-smaller" aria-label="Smaller text">A−</button>
     <button class="song-scale-value" data-action="song-text-reset" aria-label="Reset text size">100%</button>
@@ -2107,13 +2119,13 @@ L:1/8
 <p class="song-meta"><span class="meta-item">Autor: Gregoriana (s. XIII) - Misa XVIII</span><span class="meta-item song-key">Key: Em</span></p>
 <p class="pills"><span><i class="k0">Misa</i><i class="k3">Santo</i></span><i class="k10">Psalitre</i></p>
 <div class="controls">
-  <button data-action="toggle-chords">Chords</button>
+  <button class="switch" data-action="toggle-chords" aria-pressed="true">Chords</button>
   <div class="stepper">
     <button data-action="transpose-down" aria-label="Transpose down">−</button>
     <button class="transpose-value" data-action="transpose-reset" aria-label="Reset transpose">0</button>
     <button data-action="transpose-up" aria-label="Transpose up">+</button>
   </div>
-  <button data-action="toggle-columns">Columns</button>
+  <button class="switch" data-action="toggle-columns" aria-pressed="false">Columns</button>
   <div class="stepper">
     <button data-action="song-text-smaller" aria-label="Smaller text">A−</button>
     <button class="song-scale-value" data-action="song-text-reset" aria-label="Reset text size">100%</button>
@@ -2137,13 +2149,13 @@ L:1/8
 <p class="song-meta"><span class="meta-item">Autor: T. Aragüés</span><span class="meta-item song-key">Key: A</span></p>
 <p class="pills"><span><i class="k0">Misa</i><i class="k3">Santo</i></span><i class="k10">Psalitre</i></p>
 <div class="controls">
-  <button data-action="toggle-chords">Chords</button>
+  <button class="switch" data-action="toggle-chords" aria-pressed="true">Chords</button>
   <div class="stepper">
     <button data-action="transpose-down" aria-label="Transpose down">−</button>
     <button class="transpose-value" data-action="transpose-reset" aria-label="Reset transpose">0</button>
     <button data-action="transpose-up" aria-label="Transpose up">+</button>
   </div>
-  <button data-action="toggle-columns">Columns</button>
+  <button class="switch" data-action="toggle-columns" aria-pressed="false">Columns</button>
   <div class="stepper">
     <button data-action="song-text-smaller" aria-label="Smaller text">A−</button>
     <button class="song-scale-value" data-action="song-text-reset" aria-label="Reset text size">100%</button>
@@ -2168,13 +2180,13 @@ L:1/8
 <p class="song-meta"><span class="meta-item">Autor: M. Manzano</span><span class="meta-item song-key">Key: F</span></p>
 <p class="pills"><span><i class="k0">Misa</i><i class="k3">Santo</i></span><i class="k10">Psalitre</i></p>
 <div class="controls">
-  <button data-action="toggle-chords">Chords</button>
+  <button class="switch" data-action="toggle-chords" aria-pressed="true">Chords</button>
   <div class="stepper">
     <button data-action="transpose-down" aria-label="Transpose down">−</button>
     <button class="transpose-value" data-action="transpose-reset" aria-label="Reset transpose">0</button>
     <button data-action="transpose-up" aria-label="Transpose up">+</button>
   </div>
-  <button data-action="toggle-columns">Columns</button>
+  <button class="switch" data-action="toggle-columns" aria-pressed="false">Columns</button>
   <div class="stepper">
     <button data-action="song-text-smaller" aria-label="Smaller text">A−</button>
     <button class="song-scale-value" data-action="song-text-reset" aria-label="Reset text size">100%</button>
@@ -2199,13 +2211,13 @@ L:1/8
 <p class="song-meta"><span class="meta-item">Autor: Palazón</span><span class="meta-item song-key">Key: D</span></p>
 <p class="pills"><span><i class="k0">Misa</i><i class="k3">Santo</i></span><i class="k10">Psalitre</i></p>
 <div class="controls">
-  <button data-action="toggle-chords">Chords</button>
+  <button class="switch" data-action="toggle-chords" aria-pressed="true">Chords</button>
   <div class="stepper">
     <button data-action="transpose-down" aria-label="Transpose down">−</button>
     <button class="transpose-value" data-action="transpose-reset" aria-label="Reset transpose">0</button>
     <button data-action="transpose-up" aria-label="Transpose up">+</button>
   </div>
-  <button data-action="toggle-columns">Columns</button>
+  <button class="switch" data-action="toggle-columns" aria-pressed="false">Columns</button>
   <div class="stepper">
     <button data-action="song-text-smaller" aria-label="Smaller text">A−</button>
     <button class="song-scale-value" data-action="song-text-reset" aria-label="Reset text size">100%</button>
@@ -2230,13 +2242,13 @@ L:1/8
 <p class="song-meta"><span class="meta-item">Autor: J. Berthier</span><span class="meta-item song-key">Key: F</span></p>
 <p class="pills"><span><i class="k0">Misa</i><i class="k3">Santo</i></span><i class="k10">Psalitre</i></p>
 <div class="controls">
-  <button data-action="toggle-chords">Chords</button>
+  <button class="switch" data-action="toggle-chords" aria-pressed="true">Chords</button>
   <div class="stepper">
     <button data-action="transpose-down" aria-label="Transpose down">−</button>
     <button class="transpose-value" data-action="transpose-reset" aria-label="Reset transpose">0</button>
     <button data-action="transpose-up" aria-label="Transpose up">+</button>
   </div>
-  <button data-action="toggle-columns">Columns</button>
+  <button class="switch" data-action="toggle-columns" aria-pressed="false">Columns</button>
   <div class="stepper">
     <button data-action="song-text-smaller" aria-label="Smaller text">A−</button>
     <button class="song-scale-value" data-action="song-text-reset" aria-label="Reset text size">100%</button>
@@ -2265,13 +2277,13 @@ L:1/8
 <p class="song-meta"><span class="meta-item">Autor: Tradicional (canto latino)</span><span class="meta-item song-key">Key: Bm</span></p>
 <p class="pills"><span><i class="k0">Misa</i><i class="k6">Comunion</i></span><i class="k9">Latin</i></p>
 <div class="controls">
-  <button data-action="toggle-chords">Chords</button>
+  <button class="switch" data-action="toggle-chords" aria-pressed="true">Chords</button>
   <div class="stepper">
     <button data-action="transpose-down" aria-label="Transpose down">−</button>
     <button class="transpose-value" data-action="transpose-reset" aria-label="Reset transpose">0</button>
     <button data-action="transpose-up" aria-label="Transpose up">+</button>
   </div>
-  <button data-action="toggle-columns">Columns</button>
+  <button class="switch" data-action="toggle-columns" aria-pressed="false">Columns</button>
   <div class="stepper">
     <button data-action="song-text-smaller" aria-label="Smaller text">A−</button>
     <button class="song-scale-value" data-action="song-text-reset" aria-label="Reset text size">100%</button>
@@ -2293,13 +2305,13 @@ L:1/8
 <p class="song-meta"><span class="meta-item">Autor: popular</span><span class="meta-item">Capo: 0</span><span class="meta-item song-key">Key: G</span><a class="meta-item" href="https://open.spotify.com/track/17ciTNtUcQxJ5gRJuLtbNX?si=a0c8c30edc634d0d" target="_blank" rel="noopener">Spotify link</a></p>
 <p class="pills"><span><i class="k0">Misa</i><i class="k6">Comunion</i></span></p>
 <div class="controls">
-  <button data-action="toggle-chords">Chords</button>
+  <button class="switch" data-action="toggle-chords" aria-pressed="true">Chords</button>
   <div class="stepper">
     <button data-action="transpose-down" aria-label="Transpose down">−</button>
     <button class="transpose-value" data-action="transpose-reset" aria-label="Reset transpose">0</button>
     <button data-action="transpose-up" aria-label="Transpose up">+</button>
   </div>
-  <button data-action="toggle-columns">Columns</button>
+  <button class="switch" data-action="toggle-columns" aria-pressed="false">Columns</button>
   <div class="stepper">
     <button data-action="song-text-smaller" aria-label="Smaller text">A−</button>
     <button class="song-scale-value" data-action="song-text-reset" aria-label="Reset text size">100%</button>
@@ -2509,6 +2521,18 @@ function songSetting(name, values, onGlobalChange) {
     };
 }
 
+// The words of a .lyric-line or .line-pair, as read: a pair's own lyric is
+// everything in it but its .chord-line (and a nested .lyric-line, which is a
+// line of its own). Not only its text nodes: the "Sílabas" spans (formula.js)
+// sit inside words ("corrien<span>tes</span>").
+function lyricText(line) {
+    if (!line.matches(".line-pair")) return line.textContent;
+    return [...line.childNodes]
+        .filter((node) => node.nodeType === Node.TEXT_NODE || !node.matches(".chord-line, .lyric-line"))
+        .map((node) => node.textContent)
+        .join("");
+}
+
 // Lowercase and strip accents so "Señor" matches "senor".
 function normalizeText(text) {
     return text.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
@@ -2620,10 +2644,22 @@ const chordsSetting = songSetting("chords", ["show", "hide"], (value) =>
 const columnsSetting = songSetting("columns", ["1", "2"], (value) =>
     setActionLabel("toggle-all-columns", value === "2" ? "1 column" : "2 columns"));
 
-onAction("toggle-chords", (button, song) => chordsSetting.toggleSong(song));
-onAction("toggle-columns", (button, song) => columnsSetting.toggleSong(song));
-onAction("toggle-all-chords", () => chordsSetting.toggleGlobal());
-onAction("toggle-all-columns", () => columnsSetting.toggleGlobal());
+// Slider of each song's Chords/Columns button: on = chords showing / 2 columns,
+// from the song's own override or else the book-wide value.
+function syncSwitches() {
+    for (const [action, name, on] of [["toggle-chords", "chords", "show"], ["toggle-columns", "columns", "2"]]) {
+        document.querySelectorAll(`[data-action="${action}"]`).forEach((button) => {
+            const value = button.closest(".song")?.dataset[name] || document.body.dataset[name];
+            button.setAttribute("aria-pressed", value === on);
+        });
+    }
+}
+
+onAction("toggle-chords", (button, song) => { chordsSetting.toggleSong(song); syncSwitches(); });
+onAction("toggle-columns", (button, song) => { columnsSetting.toggleSong(song); syncSwitches(); });
+onAction("toggle-all-chords", () => { chordsSetting.toggleGlobal(); syncSwitches(); });
+onAction("toggle-all-columns", () => { columnsSetting.toggleGlobal(); syncSwitches(); });
+syncSwitches();
 
 // Put every song back as written: transpose 0, no per-song chords/columns.
 onAction("reset-songs", () => {
@@ -2631,6 +2667,7 @@ onAction("reset-songs", () => {
         .forEach((song) => setTranspose(song, 0));
     chordsSetting.clearSongs();
     columnsSetting.clearSongs();
+    syncSwitches();
     document.querySelectorAll(".song[data-song-scale]").forEach((song) => setSongScale(song, 1));
     songState.clearAll();
 });
@@ -3110,14 +3147,11 @@ function searchText(text) {
 
 const searchIndex = [...document.querySelectorAll(".song")].map((song) => {
     // Lyric lines only: chord lines would add noise ("am", "do"...). A lyric
-    // under a chord line is its .line-pair's own text.
+    // under a chord line is its .line-pair's own text (lyricText, core.js).
     // A psalm's fórmula (formula.js) is a copy of another song: not the psalm's words.
     const lines = [...song.querySelectorAll(".lyric-line, .line-pair")]
         .filter((line) => !line.closest(".psalm-formula"))
-        .map((line) => (line.matches(".lyric-line")
-            ? line.textContent
-            : [...line.childNodes].filter((node) => node.nodeType === Node.TEXT_NODE).map((node) => node.data).join("")
-        ).trim())
+        .map((line) => lyricText(line).trim())
         .filter(Boolean);
     const lineText = lines.map(searchText);
     return {
@@ -3505,9 +3539,7 @@ function slideVerses(id) {
     return [...document.getElementById(id).querySelectorAll(".lyrics > .verse")].map((verse) =>
         [...verse.children].flatMap((el) => {
             if (el.classList.contains("chord-inline") || el.querySelector(".chord-inline")) return [];
-            const text = el.classList.contains("line-pair")
-                ? [...el.childNodes].filter((n) => n.nodeType === Node.TEXT_NODE).map((n) => n.textContent).join("")
-                : el.classList.contains("lyric-line") ? el.textContent : "";
+            const text = el.matches(".line-pair, .lyric-line") ? lyricText(el) : "";
             return text.trim() ? [{ text: text.trim(), bold: el.classList.contains("bold") }] : [];
         })
     ).filter((lines) => lines.length);
